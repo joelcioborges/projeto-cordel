@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">    
+    <title> Capítulo 20 - Projeto Cordel </title>
+    <style>
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        p {
+            text-indent: 30px;
+        }
+
+        b.cor#az {
+            color: blue;
+        }
+        b.cor#ver {
+            color: red;
+        }
+        b.cor#ved {
+            color: green;
+        }
+        
+    </style>   
+</head>
+<body>
+    <h1>Projeto Completo Usando HTML e CSS - Hospedando o Projeto Cordel</h1>
+    <h2>Capítulo 20: aula 07</h1>
+    <h3>27 de abril de 2025</h3>
+
+    <hr>
+    <h1>Conclusão:</h1>
+
+    <p>
+        Tendo finalizado o projeto será preciso colocá-lo no ar atrvéz do serviço gratuito do GitHub. Será usado o GitHub Desktop para facilitar o processo.
+    </p>
+
+    <pre>
+        <b class="cor" id="az">/*Arquivo de ESTILO .css */</b>
+    
+        @charset "UTF-8";
+    
+        @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+        
+        @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+        
+        .passion-one-regular {
+        font-family: "Passion One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        .passion-one-bold {
+        font-family: "Passion One", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+        .passion-one-black {
+        font-family: "Passion One", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        }
+        
+        .sriracha-regular {
+        font-family: "Sriracha", cursive;
+        font-weight: 400;
+        font-style: normal;
+        }        
+        
+        :root {
+            --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+            --fonte2: 'Passion One', cursive;
+            --fonte3: 'Sriracha', cursive;
+        }
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 1em;    
+        }
+        
+        html, body {
+            <b class="cor" id="ved">/* tamanho da view port [100vh = 100% da altura] vw100 = 100% da largura]*/</b>
+            min-height: 100vh;
+            background-color: darkgray;
+            font-family: var(--fonte1);
+        }
+        
+        header{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: var(--fonte2);        
+        }
+        header > h1 {
+            padding-top: 50px;
+            <b class="cor" id="ved">/* Coloca todas as fotes em CAIXA ALTA */</b>
+            <b>/* text-transform: uppercase; */</b>
+            <b class="cor" id="ved">/* Todas as letras estão em MAIÚSCULO com a 1ª letra MAIOR */</b>
+            font-variant: small-caps;
+            <b class="cor" id="ved">/* Com a configuração ABAIXO o Texto ficará de tamanho estático em telas menores poderá ser um problema */</b>
+            <b>/* font-size: 4em; */</b>
+            <b class="cor" id="ved">/* Com a configuração ABAIXO o tamanho do texto será adaptado */</b>
+            <b class="cor" id="ver">font-size: 10vw;</b>
+        }
+        header > P {
+            padding-bottom: 50px;
+        }    
+        header a, footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;    
+        }
+        header a:hover, footer a:hover {
+            text-decoration: underline;
+        }
+        
+        <b class="cor" id="ved">/* A configuração de [section] a seguir servirá para as demais */</b>
+        section {
+            padding-top: 10vh;
+            padding-bottom: 10vh;
+            <b class="cor" id="ved">/* Espaçamento entre linhas */</b>
+            line-height: 2em;
+            padding-left: 30px;
+            font-family: var(--fonte3);    
+            <b class="cor" id="ved">/* font-size: 2em;     */</b>
+            <b class="cor" id="ver">font-size: 3.5vw;</b>
+        }
+        section p {
+            padding-bottom: 2em;
+        }    
+        section.normal {
+            background-color: white;
+            color: black;
+        }
+        section.imagem {
+            background-color: rgb(51, 51, 51);
+            color: white;
+            <b class="cor" id="ved">/* Coloca um SOBRA INTERNA na caixa */</b>
+            box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473);
+            background-size: cover;
+            <b class="cor" id="ver">/* Cria o Efeito PARALLAX no Site */</b>
+            <b>background-attachment: fixed;</b>
+        }
+        section.imagem > p {
+            <b class="cor" id="ved">/* A configuração abaixo apresentou problema de design */</b>
+            <b>/* width: 400px; */</b>
+            <b class="cor" id="ved">/* A configuração abaixo apresentou um resultado melhor, pois transforma a caixa em um tamanho que SE ADAPTA ao tamanho do conteúdo */</b>
+            <b class="cor" id="ver">display: inline-block;</b>
+            background-color: rgba(0, 0, 0, 0.514);
+            padding: 5px;  <b class="cor" id="az">/* Correção de Espaçamento do parágrafo na section */</b>
+            text-shadow: 1px 1px 0px black;
+        }
+        section#img01 {
+            background-image: url('../imagens/background001.jpg');
+            background-position: right center;    
+        }
+        section#img02 {
+            background-image: url('../imagens/background002.jpg');   
+        }
+        
+        footer {
+            background-color: black;
+            color: white; 
+            padding: 10px;
+            text-align: center;        
+        }        
+        </pre>
+    
+        <hr>
+        
+        <pre>
+        <b class="cor" id="az">&lt;!-- Código HTML --&gt;</b>
+    
+        &lt;!DOCTYPE html>
+        &lt;html lang="pt-br">
+        &lt;head>
+            &lt;meta charset="UTF-8">
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+            &lt;link rel="stylesheet" href="css/style.css">
+            &lt;title>Cordel Moderno&lt;/title>
+        &lt;/head>
+        &lt;body>
+            &lt;header>        
+                &lt;h1>
+                    Cordel Moderno
+                &lt;/h1>
+                &lt;p>
+                    Por &lt;a href="https://www.recantodasletras.com.br/poesias/3186743" target="_blank" rel="external">Milton Duarte&lt;/a> &lt;/p>           
+                &lt;/p>
+            &lt;/header>
+    
+            &lt;section class="normal"> <b class="cor" id="ved">&lt;!-- terá um fundo BRANCO --&gt;</b>
+                    &lt;p>
+                    Estou ficando cansado &lt;br>
+                    Da tal tecnologia &lt;br>
+                    Só se fala por e-mail &lt;br>
+                    Mensagem curta e fria &lt;br>
+                    Twitter e Facebook &lt;br>
+                    Antes que eu caduque &lt;br>
+                    Vou dizer tudo em poesia.
+                &lt;/p>
+            &lt;/section>    
+    
+            &lt;section class="imagem" id="img01">  <b class="cor" id="ved">&lt;!-- terá uma imagem no fundo --&gt;</b>
+                &lt;p>
+                    Não é mais como era antes &lt;br>
+                    É tudo abreviado &lt;br>
+                    "Você" só tem duas letras &lt;br>
+                    O "O" e o "E" foi riscado
+                    Para declarar o amor &lt;br>
+                    Basta botar uma flor &lt;br>
+                    E um coração desenhado.
+                &lt;/p>
+            &lt;/section>
+    
+            &lt;section class="normal">        
+                &lt;p>
+                    Arroba agora não peso &lt;br>
+                    É parte de um endereço &lt;br>
+                    Ponto final nem se usa &lt;br>
+                    Ou vai até no começo &lt;br>
+                    Agora é .com &lt;br>
+                    Se o saite é muito bom &lt;br>
+                    Ele vale um alto preço.
+                &lt;/p>
+    
+                &lt;p>
+                    Pra piorar a liguagem &lt;br>
+                    O emoticom é um risco &lt;br>
+                    Tem símbolo para tudo &lt;br>
+                    Ponto e vírgula e um  &lt;br>sterisco &lt;br>
+                    Um beijo significa &lt;br>
+                    Pra entender como fica &lt;br>
+                    Decifre esse rabisco. 
+                &lt;/p>        
+            &lt;/section>    
+    
+            &lt;section class="imagem" id="img02">
+                &lt;p>
+                    Tenho saudade das cartas &lt;br>
+                    Escritas com a própria mão &lt;br>
+                    Mandava no mês de Junho &lt;br>
+                    Só chegava no Verão &lt;br>
+                    Mas matava a saudade &lt;br>
+                    Era texto de verdade &lt;br>
+                    Nas linhas do coração.
+                &lt;/p>
+            &lt;/section>
+    
+            &lt;section class="normal">        
+                &lt;p>
+                    Agora, escrevo e envio &lt;br>
+                    Chegando na mesma hora &lt;br>
+                    Mas quando vou prosear &lt;br>
+                    A pessoa foi embora &lt;br>
+                    Abriu outro aplicativo &lt;br>
+                    O mundo ficou cativo &lt;br>
+                    Da tecnologia do agora. 
+                &lt;/p>
+    
+                &lt;p>                
+                    Felizmente, pra orar &lt;br>
+                    Não precisa de internet &lt;br>
+                    Deus escuta todo mundo &lt;br>
+                    Se quiser, faça esse teste &lt;br>
+                    Dois pontos são dois joelhos &lt;br>
+                    Seus lábios são aparelhos &lt;br>
+                    Deixe que Deus interprete.
+                &lt;/p>
+            
+            &lt;/section>
+    
+            &lt;footer>
+                &lt;p>
+                    Site Criado por &lt;a href="https://github.com/joelcioborges/" target="_blank"
+                    rel="external">Newjohn&lt;/a> para o &lt;a href="https://www.cursoemvideo.com/"
+                    target="_blank" rel="external">Curso em Video&lt;/a>&lt;/p>
+            &lt;/footer>
+        &lt;/body>
+        &lt;/html>
+        </pre>
+    
+    <p>
+        Acessando o site abaixo o projeto pronto será apresentado pelo professor.
+    </p>
+    <p>
+        <pre>
+    <a href="https://professorguanabara.github.io/projeto-cordel/" target="_blank" rel="external">https://professorguanabara.github.io/projeto-cordel/</a>
+        </pre>
+    </p>
+</body>
+</html>
